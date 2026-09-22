@@ -32,30 +32,15 @@ int main() {
     else skip = false;
   }
 
-  Outprint(Group);
+
 
   std::random_device rd;
   std::mt19937 rand(rd());
   std::shuffle(Group.begin(), Group.end(), rand);
-  for (auto i : Group) {
-      std::cout<<i<<" ";
-  }
-  std::sort(Group.begin(), Group.end());
-  for (auto i : Group) {
-      std::cout<<i<<" ";
-  }
+  Outprint(Group);
 
-
-  std::sort(Group.begin(), Group.end(), std::greater<int>());
-  for (auto i : Group) {
-      std::cout<<i<<" ";
-  }
-  std::shuffle(Group.begin(), Group.end(),rand);
-  for (auto i : Group) {
-      std::cout<<i<<" ";
-  }
-  std::sort(Group.begin(), Group.end(), [](int a, int b){return a>b;} );
-
+  std::sort(Group.begin(), Group.end(), [](BFF a, BFF b){return a.gross>b.gross;} );
+  Outprint (Group);
 
 
 
