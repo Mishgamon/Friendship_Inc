@@ -36,7 +36,7 @@ int main() {
 
   std::random_device rd;
   std::mt19937 rand(rd());
-  std::shuffle(Group::begin(), Group::end(),rand);
+  std::shuffle(Group.begin(), Group.end(), rand);
   for (auto i : Group) {
       std::cout<<i<<" ";
   }
@@ -46,21 +46,15 @@ int main() {
   }
 
 
-
-
-
-
-
-
-  std::sort(shuffle.begin(), shuffle.end(), std::greater<int>());
-  for (auto i : shuffle) {
+  std::sort(Group.begin(), Group.end(), std::greater<int>());
+  for (auto i : Group) {
       std::cout<<i<<" ";
   }
-  std::shuffle(shuffle.begin(), shuffle.end(),rand);
-  for (auto i : shuffle) {
+  std::shuffle(Group.begin(), Group.end(),rand);
+  for (auto i : Group) {
       std::cout<<i<<" ";
   }
-  std::sort(shuffle.begin(), shuffle.end(), [](int a, int b){return a>b;} );
+  std::sort(Group.begin(), Group.end(), [](int a, int b){return a>b;} );
 
 
 
