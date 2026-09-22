@@ -31,15 +31,17 @@ int main() {
   }
     else skip = false;
   }
+  Outprint(Group);
 
 
 
   std::random_device rd;
   std::mt19937 rand(rd());
+
   std::shuffle(Group.begin(), Group.end(), rand);
   Outprint(Group);
 
-  std::sort(Group.begin(), Group.end(), [](BFF a, BFF b){return a.gross>b.gross;} );
+  std::sort(Group.begin(), Group.end(), [](BFF a, BFF b){return a.gross>b.gross;});
   Outprint (Group);
 
 
@@ -74,11 +76,11 @@ void ParseString(std::string &s, std::string &t) {
 void Outprint(std::vector <BFF> v) {
   std::cout<<"----------------------------------------------------------------------------\n";
 for (int i = 0; i < v.size(); ++i) {
-  std::cout<<std::setw(15) << std::right<<v.at(i).name;
+  std::cout<<std::setw(15) << std::left<<v.at(i).name;
   std::cout<<std::setw(15) << v.at(i).SSN;
-  std::cout<<std::setw(15) << v.at(i).monies;
+  std::cout<<std::setw(0) << "$"<<std::fixed << std::setprecision(2)<< std::setw(14)<<v.at(i).monies;
   std::cout<<std::setw(15) << v.at(i).hrs;
-  std::cout<<std::setw(15) << v.at(i).gross;
+  std::cout<<std::setw(0) << "$"<<std::setw(14) << v.at(i).gross;
    std::cout<<std::endl;
 }
 
