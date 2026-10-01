@@ -74,6 +74,12 @@ void ParseString(std::string &s, std::string &t) {
 
 
 void Outprint(std::vector <BFF> v) {
+  std::cout<<std::setw(8) << std::left <<"NAME";
+  std::cout<<std::setw(15) << std::internal <<"EMPNUMBER";
+  std::cout<<std::setw(15) << "HOURLY RATE";
+  std::cout<<std::setw(15) << "HOURS WORKED";
+  std::cout<<std::setw(15) << "GROSS PAY";
+  std::cout<<std::endl;
   std::cout<<"----------------------------------------------------------------------------\n";
 for (int i = 0; i < v.size(); ++i) {
   std::cout<<std::setw(15) << std::left<<v.at(i).name;
